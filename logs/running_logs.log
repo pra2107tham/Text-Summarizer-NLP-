@@ -1,1 +1,43 @@
 [2024-07-31 18:29:16,203: INFO: /main: This is an info message]
+[2024-08-01 10:14:23,135: ERROR: /main: name 'STAGE_NAME' is not defined]
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\main.py", line 6, in <module>
+    logger.info(f">>>>> stage {STAGE_NAME} started <<<<<")
+                               ^^^^^^^^^^
+NameError: name 'STAGE_NAME' is not defined
+[2024-08-01 10:14:33,781: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 10:14:33,783: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 10:14:33,784: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 10:14:33,786: INFO: /common: directory created at artifacts]
+[2024-08-01 10:14:33,787: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 10:14:37,004: INFO: /data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 7F46:A0C83:367B7A:4513AC:66AB0EF3
+Accept-Ranges: bytes
+Date: Thu, 01 Aug 2024 04:44:35 GMT
+Via: 1.1 varnish
+X-Served-By: cache-bom4751-BOM
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1722487475.441108,VS0,VE250
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: caf49972f6623cfb229c8c19b0a5b6bbeee9b95d
+Expires: Thu, 01 Aug 2024 04:49:35 GMT
+Source-Age: 0
+
+]
+[2024-08-01 10:14:37,238: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]

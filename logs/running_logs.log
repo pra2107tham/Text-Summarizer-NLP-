@@ -41,3 +41,51 @@ Source-Age: 0
 
 x================x
 ]
+[2024-08-01 15:25:51,734: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 15:25:51,744: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 15:25:51,746: INFO: /common: directory created at artifacts]
+[2024-08-01 15:25:51,747: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 15:36:14,623: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 15:36:14,624: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 15:36:14,625: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 15:36:14,626: INFO: /common: directory created at artifacts]
+[2024-08-01 15:36:14,626: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 15:36:20,700: INFO: /data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: ED10:29E3AF:4779F6:5A9EC7:66AB5B39
+Accept-Ranges: bytes
+Date: Thu, 01 Aug 2024 10:06:16 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10235-MAA
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1722506777.567251,VS0,VE260
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 7834128c2d75718276ab32a99b2493a422e90f36
+Expires: Thu, 01 Aug 2024 10:11:16 GMT
+Source-Age: 0
+
+]
+[2024-08-01 15:36:20,898: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 15:36:20,898: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 15:36:20,909: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 15:36:20,912: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 15:36:20,912: INFO: /common: directory created at artifacts]
+[2024-08-01 15:36:20,914: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 15:36:20,934: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]

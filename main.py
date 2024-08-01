@@ -36,26 +36,33 @@ except Exception as e:
         logger.exception(e)
         raise e
 
-
 STAGE_NAME = "Model Trainer stage"
-try: 
-   logger.info(f"*******************")
-   logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-   model_trainer = ModelTrainerTrainingPipeline()
-   model_trainer.main()
-   logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+try:
+    logger.info(f"*******************")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    model_trainer = ModelTrainerTrainingPipeline()
+    logger.info("ModelTrainerTrainingPipeline instance created.")
+    
+    # Add logging before starting the main training process
+    logger.info("Starting the main training process...")
+    model_trainer.main()
+    
+    logger.info("Model training completed successfully.")
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
 except Exception as e:
-        logger.exception(e)
-        raise e
+    logger.exception(f"Exception occurred in {STAGE_NAME}: {e}")
+    raise e
 
 
 STAGE_NAME = "Model Evaluation stage"
-try: 
-   logger.info(f"*******************")
-   logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-   model_evaluation = ModelEvaluationTrainingPipeline()
-   model_evaluation.main()
-   logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+try:
+    logger.info(f"*******************")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    model_evaluation = ModelEvaluationTrainingPipeline()
+    logger.info("ModelEvaluationTrainingPipeline instance created.")
+    model_evaluation.main()
+    logger.info("Model evaluation completed successfully.")
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
 except Exception as e:
-        logger.exception(e)
-        raise e
+    logger.exception(f"Exception occurred in {STAGE_NAME}: {e}")
+    raise e

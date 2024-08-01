@@ -4,6 +4,7 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from datasets import load_dataset, load_from_disk
 import torch
 from textSummarizer.entity import ModelTrainerConfig
+import os
 
 class ModelTrainer:
     def __init__(self, config: ModelTrainerConfig):
@@ -28,6 +29,29 @@ class ModelTrainer:
             gradient_accumulation_steps=self.config.gradient_accumulation_steps
         ) 
 
+        # # Ensure numerical values are integers
+        # num_train_epochs = int(self.config.num_train_epochs)
+        # warmup_steps = int(self.config.warmup_steps)
+        # per_device_train_batch_size = int(self.config.per_device_train_batch_size)
+        # per_device_eval_batch_size = int(self.config.per_device_eval_batch_size)
+        # weight_decay = float(self.config.weight_decay)
+        # logging_steps = int(self.config.logging_steps)
+        # eval_steps = int(self.config.eval_steps)
+        # gradient_accumulation_steps = int(self.config.gradient_accumulation_steps)
+
+        # trainer_args = TrainingArguments(
+        #     output_dir=self.config.root_dir,
+        #     num_train_epochs=num_train_epochs,
+        #     warmup_steps=warmup_steps,
+        #     per_device_train_batch_size=per_device_train_batch_size,
+        #     per_device_eval_batch_size=per_device_eval_batch_size,
+        #     weight_decay=weight_decay,
+        #     logging_steps=logging_steps,
+        #     evaluation_strategy=self.config.evaluation_strategy,
+        #     eval_steps=eval_steps,
+        #     save_steps=int(1e6),
+        #     gradient_accumulation_steps=gradient_accumulation_steps
+        # )
 
         # trainer_args = TrainingArguments(
         #     output_dir=self.config.root_dir, num_train_epochs=1, warmup_steps=500,

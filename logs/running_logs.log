@@ -157,3 +157,888 @@ x==========x]
 [2024-08-01 16:04:47,280: INFO: /common: directory created at artifacts]
 [2024-08-01 16:04:47,282: INFO: /common: directory created at artifacts/model_trainer]
 [2024-08-01 16:15:58,759: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 16:34:19,898: INFO: /server: Started server process [12688]]
+[2024-08-01 16:34:19,901: INFO: /on: Waiting for application startup.]
+[2024-08-01 16:34:19,903: INFO: /on: Application startup complete.]
+[2024-08-01 16:34:19,905: INFO: /server: Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)]
+[2024-08-01 16:38:37,029: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 16:38:38,541: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 16:38:38,543: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 16:38:38,545: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 16:38:38,546: INFO: /common: directory created at artifacts]
+[2024-08-01 16:38:38,546: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 16:38:38,547: INFO: /data_ingestion: File already exists of size: ~ 7718 KB]
+[2024-08-01 16:38:38,695: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 16:38:38,697: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 16:38:38,699: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 16:38:38,700: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 16:38:38,701: INFO: /common: directory created at artifacts]
+[2024-08-01 16:38:38,701: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 16:38:38,704: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 16:38:38,706: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 16:38:38,708: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 16:38:38,710: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 16:38:38,710: INFO: /common: directory created at artifacts]
+[2024-08-01 16:38:38,711: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 16:38:40,606: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 16:38:40,607: INFO: /main: *******************]
+[2024-08-01 16:38:40,608: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 16:38:40,610: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 16:38:40,611: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 16:38:40,611: INFO: /common: directory created at artifacts]
+[2024-08-01 16:38:40,612: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 16:43:18,712: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 16:43:18,725: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 16:43:18,727: INFO: /common: directory created at artifacts]
+[2024-08-01 16:43:18,730: INFO: /common: directory created at artifacts/model_evaluation]
+[2024-08-01 16:43:18,772: ERROR: /h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\transformers\utils\hub.py", line 402, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\huggingface_hub\utils\_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\huggingface_hub\utils\_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\huggingface_hub\utils\_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'artifacts/model_trainer/tokenizer'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\app.py", line 41, in predict_route
+    raise e
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\app.py", line 38, in predict_route
+    text = obj.predict(text)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\pipeline\prediction.py", line 13, in predict
+    tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 833, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 665, in get_tokenizer_config
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\transformers\utils\hub.py", line 466, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'artifacts/model_trainer/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+[2024-08-01 17:04:27,604: INFO: /server: Shutting down]
+[2024-08-01 17:04:27,729: INFO: /on: Waiting for application shutdown.]
+[2024-08-01 17:04:27,740: INFO: /on: Application shutdown complete.]
+[2024-08-01 17:04:27,744: INFO: /server: Finished server process [12688]]
+[2024-08-01 17:04:38,588: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:04:40,373: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:04:40,375: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:04:40,377: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:04:40,378: INFO: /common: directory created at artifacts]
+[2024-08-01 17:04:40,378: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:04:40,379: INFO: /data_ingestion: File already exists of size: ~ 7718 KB]
+[2024-08-01 17:04:50,860: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:04:52,035: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:04:52,038: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:04:52,039: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:04:52,040: INFO: /common: directory created at artifacts]
+[2024-08-01 17:04:52,040: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:05:03,634: INFO: /data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: ED10:29E3AF:4779F6:5A9EC7:66AB5B39
+Accept-Ranges: bytes
+Date: Thu, 01 Aug 2024 11:34:54 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10230-MAA
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1722512094.928259,VS0,VE277
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: ab80011c325d20dc1b624e8c4317cdfb60b8853c
+Expires: Thu, 01 Aug 2024 11:39:54 GMT
+Source-Age: 0
+
+]
+[2024-08-01 17:05:03,802: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 17:05:03,802: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 17:05:03,804: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:05:03,805: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:05:03,806: INFO: /common: directory created at artifacts]
+[2024-08-01 17:05:03,806: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 17:05:03,808: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:05:03,808: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 17:05:03,810: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:05:03,811: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:05:03,812: INFO: /common: directory created at artifacts]
+[2024-08-01 17:05:03,813: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 17:05:08,778: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:05:08,779: INFO: /main: *******************]
+[2024-08-01 17:05:08,779: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 17:05:08,781: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:05:08,782: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:05:08,783: INFO: /common: directory created at artifacts]
+[2024-08-01 17:05:08,783: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 17:05:19,757: ERROR: /main: '>' not supported between instances of 'str' and 'int']
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\main.py", line 45, in <module>
+    model_trainer.main()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\pipeline\stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\components\model_trainer.py", line 23, in train
+    trainer_args = TrainingArguments(
+                   ^^^^^^^^^^^^^^^^^^
+  File "<string>", line 131, in __init__
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\transformers\training_args.py", line 1581, in __post_init__
+    if self.eval_strategy == IntervalStrategy.STEPS and self.eval_steps > 1:
+                                                        ^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'str' and 'int'
+[2024-08-01 17:09:28,131: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:09:29,995: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:09:29,999: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:09:30,002: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:09:30,003: INFO: /common: directory created at artifacts]
+[2024-08-01 17:09:30,004: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:09:35,629: INFO: /data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: ED10:29E3AF:4779F6:5A9EC7:66AB5B39
+Accept-Ranges: bytes
+Date: Thu, 01 Aug 2024 11:39:31 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10233-MAA
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1722512372.811434,VS0,VE1
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: ad7a75212663768cdbb7b597cfa0253614afcc47
+Expires: Thu, 01 Aug 2024 11:44:31 GMT
+Source-Age: 278
+
+]
+[2024-08-01 17:09:35,793: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 17:09:35,794: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 17:09:35,796: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:09:35,797: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:09:35,797: INFO: /common: directory created at artifacts]
+[2024-08-01 17:09:35,798: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 17:09:35,799: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:09:35,799: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 17:09:35,801: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:09:35,803: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:09:35,803: INFO: /common: directory created at artifacts]
+[2024-08-01 17:09:35,804: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 17:09:40,022: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:09:40,023: INFO: /main: *******************]
+[2024-08-01 17:09:40,024: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 17:09:40,026: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:09:40,027: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:09:40,028: INFO: /common: directory created at artifacts]
+[2024-08-01 17:09:40,028: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 17:09:51,022: ERROR: /main: 'ModelTrainerConfig' object has no attribute 'per_device_eval_batch_size']
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\main.py", line 45, in <module>
+    model_trainer.main()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\pipeline\stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\components\model_trainer.py", line 35, in train
+    per_device_eval_batch_size = int(self.config.per_device_eval_batch_size)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ModelTrainerConfig' object has no attribute 'per_device_eval_batch_size'. Did you mean: 'per_device_train_batch_size'?
+[2024-08-01 17:14:23,793: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:14:25,295: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:14:25,297: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:14:25,309: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:14:25,310: INFO: /common: directory created at artifacts]
+[2024-08-01 17:14:25,311: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:14:31,681: INFO: /data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: ED10:29E3AF:4779F6:5A9EC7:66AB5B39
+Accept-Ranges: bytes
+Date: Thu, 01 Aug 2024 11:44:27 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10241-MAA
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1722512667.038578,VS0,VE259
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 60fe3b087538be9b561f4a8403e5a57d8f06068b
+Expires: Thu, 01 Aug 2024 11:49:27 GMT
+Source-Age: 0
+
+]
+[2024-08-01 17:14:31,956: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 17:14:31,958: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 17:14:31,961: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:14:31,964: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:14:31,965: INFO: /common: directory created at artifacts]
+[2024-08-01 17:14:31,966: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 17:14:31,972: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:14:31,973: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 17:14:31,978: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:14:31,981: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:14:31,983: INFO: /common: directory created at artifacts]
+[2024-08-01 17:14:31,985: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 17:14:38,095: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:14:38,097: INFO: /main: *******************]
+[2024-08-01 17:14:38,098: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 17:14:38,104: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:14:38,108: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:14:38,110: INFO: /common: directory created at artifacts]
+[2024-08-01 17:14:38,112: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 17:14:52,952: ERROR: /main: 'ModelTrainerConfig' object has no attribute 'per_device_eval_batch_size']
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\main.py", line 45, in <module>
+    model_trainer.main()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\pipeline\stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\components\model_trainer.py", line 36, in train
+    per_device_eval_batch_size = int(self.config.per_device_eval_batch_size)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ModelTrainerConfig' object has no attribute 'per_device_eval_batch_size'. Did you mean: 'per_device_train_batch_size'?
+[2024-08-01 17:16:09,544: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:16:11,177: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:16:11,180: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:16:11,181: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:16:11,182: INFO: /common: directory created at artifacts]
+[2024-08-01 17:16:11,182: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:16:18,523: INFO: /data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: ED10:29E3AF:4779F6:5A9EC7:66AB5B39
+Accept-Ranges: bytes
+Date: Thu, 01 Aug 2024 11:46:12 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10228-MAA
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1722512772.488933,VS0,VE1
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 6a3a03732f9de7c6af63380d855866b5fad5bbea
+Expires: Thu, 01 Aug 2024 11:51:12 GMT
+Source-Age: 105
+
+]
+[2024-08-01 17:16:18,694: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 17:16:18,695: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 17:16:18,697: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:16:18,698: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:16:18,698: INFO: /common: directory created at artifacts]
+[2024-08-01 17:16:18,699: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 17:16:18,701: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:16:18,702: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 17:16:18,704: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:16:18,706: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:16:18,707: INFO: /common: directory created at artifacts]
+[2024-08-01 17:16:18,708: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 17:16:23,025: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:16:23,026: INFO: /main: *******************]
+[2024-08-01 17:16:23,027: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 17:16:23,029: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:16:23,031: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:16:23,031: INFO: /common: directory created at artifacts]
+[2024-08-01 17:16:23,032: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 17:16:23,033: ERROR: /main: ModelTrainerConfig.__init__() missing 1 required positional argument: 'per_device_eval_batch_size']
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\main.py", line 45, in <module>
+    model_trainer.main()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\pipeline\stage_04_model_trainer.py", line 12, in main
+    model_trainer_config = config.get_model_trainer_config()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\config\configuration.py", line 67, in get_model_trainer_config
+    model_trainer_config = ModelTrainerConfig(
+                           ^^^^^^^^^^^^^^^^^^^
+TypeError: ModelTrainerConfig.__init__() missing 1 required positional argument: 'per_device_eval_batch_size'
+[2024-08-01 17:19:13,619: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:19:14,720: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:19:14,722: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:19:14,723: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:19:14,724: INFO: /common: directory created at artifacts]
+[2024-08-01 17:19:14,724: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:19:14,726: INFO: /data_ingestion: File already exists of size: ~ 7718 KB]
+[2024-08-01 17:19:14,854: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 17:19:14,855: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 17:19:14,857: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:19:14,858: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:19:14,859: INFO: /common: directory created at artifacts]
+[2024-08-01 17:19:14,860: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 17:19:14,861: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:19:14,862: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 17:19:14,863: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:19:14,865: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:19:14,865: INFO: /common: directory created at artifacts]
+[2024-08-01 17:19:14,866: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 17:19:16,459: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:19:16,459: INFO: /main: *******************]
+[2024-08-01 17:19:16,460: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 17:19:16,462: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:19:16,464: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:19:16,465: INFO: /common: directory created at artifacts]
+[2024-08-01 17:19:16,465: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 17:19:16,466: ERROR: /main: ModelTrainerConfig.__init__() missing 1 required positional argument: 'per_device_eval_batch_size']
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\main.py", line 45, in <module>
+    model_trainer.main()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\pipeline\stage_04_model_trainer.py", line 12, in main
+    model_trainer_config = config.get_model_trainer_config()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\config\configuration.py", line 67, in get_model_trainer_config
+    model_trainer_config = ModelTrainerConfig(
+                           ^^^^^^^^^^^^^^^^^^^
+TypeError: ModelTrainerConfig.__init__() missing 1 required positional argument: 'per_device_eval_batch_size'
+[2024-08-01 17:20:27,926: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:20:29,149: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:20:29,151: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:20:29,152: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:20:29,153: INFO: /common: directory created at artifacts]
+[2024-08-01 17:20:29,153: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:20:29,154: INFO: /data_ingestion: File already exists of size: ~ 7718 KB]
+[2024-08-01 17:20:29,294: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 17:20:29,295: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 17:20:29,298: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:20:29,299: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:20:29,299: INFO: /common: directory created at artifacts]
+[2024-08-01 17:20:29,300: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 17:20:29,302: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:20:29,303: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 17:20:29,306: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:20:29,308: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:20:29,309: INFO: /common: directory created at artifacts]
+[2024-08-01 17:20:29,309: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 17:20:31,686: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:20:31,687: INFO: /main: *******************]
+[2024-08-01 17:20:31,688: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 17:20:31,692: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:20:31,694: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:20:31,695: INFO: /common: directory created at artifacts]
+[2024-08-01 17:20:31,696: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 17:20:41,019: ERROR: /main: invalid literal for int() with base 10: 'steps']
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\main.py", line 45, in <module>
+    model_trainer.main()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\pipeline\stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\components\model_trainer.py", line 39, in train
+    eval_steps = int(self.config.eval_steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'steps'
+[2024-08-01 17:21:42,805: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:21:45,033: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:21:45,037: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:21:45,039: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:21:45,041: INFO: /common: directory created at artifacts]
+[2024-08-01 17:21:45,042: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:21:45,043: INFO: /data_ingestion: File already exists of size: ~ 7718 KB]
+[2024-08-01 17:21:45,371: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 17:21:45,372: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 17:21:45,382: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:21:45,386: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:21:45,388: INFO: /common: directory created at artifacts]
+[2024-08-01 17:21:45,392: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 17:21:45,399: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:21:45,401: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 17:21:45,409: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:21:45,413: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:21:45,414: INFO: /common: directory created at artifacts]
+[2024-08-01 17:21:45,416: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 17:21:48,127: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:21:48,128: INFO: /main: *******************]
+[2024-08-01 17:21:48,128: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 17:21:48,131: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:21:48,133: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:21:48,133: INFO: /common: directory created at artifacts]
+[2024-08-01 17:21:48,134: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 17:22:00,895: ERROR: /main: '>' not supported between instances of 'str' and 'int']
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\main.py", line 45, in <module>
+    model_trainer.main()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\pipeline\stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\components\model_trainer.py", line 24, in train
+    trainer_args = TrainingArguments(
+                   ^^^^^^^^^^^^^^^^^^
+  File "<string>", line 131, in __init__
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\textS\Lib\site-packages\transformers\training_args.py", line 1581, in __post_init__
+    if self.eval_strategy == IntervalStrategy.STEPS and self.eval_steps > 1:
+                                                        ^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'str' and 'int'
+[2024-08-01 17:33:09,397: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:33:11,125: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:33:11,130: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:33:11,132: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:33:11,133: INFO: /common: directory created at artifacts]
+[2024-08-01 17:33:11,134: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:33:11,135: INFO: /data_ingestion: File already exists of size: ~ 7718 KB]
+[2024-08-01 17:33:11,274: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 17:33:11,276: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 17:33:11,278: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:33:11,279: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:33:11,280: INFO: /common: directory created at artifacts]
+[2024-08-01 17:33:11,280: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 17:33:11,282: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:33:11,283: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 17:33:11,285: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:33:11,287: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:33:11,287: INFO: /common: directory created at artifacts]
+[2024-08-01 17:33:11,288: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 17:33:13,010: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:33:13,011: INFO: /main: *******************]
+[2024-08-01 17:33:13,011: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 17:33:13,014: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:33:13,015: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:33:13,016: INFO: /common: directory created at artifacts]
+[2024-08-01 17:33:13,016: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 17:35:35,825: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:35:37,876: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:35:37,882: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:35:37,885: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:35:37,886: INFO: /common: directory created at artifacts]
+[2024-08-01 17:35:37,888: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:35:53,929: INFO: /data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: ED10:29E3AF:4779F6:5A9EC7:66AB5B39
+Accept-Ranges: bytes
+Date: Thu, 01 Aug 2024 12:05:40 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10223-MAA
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1722513940.889511,VS0,VE255
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 7eb0981f330a92b5b5009ae2eb911ce7b015a6a2
+Expires: Thu, 01 Aug 2024 12:10:40 GMT
+Source-Age: 0
+
+]
+[2024-08-01 17:35:54,130: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 17:35:54,131: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 17:35:54,133: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:35:54,134: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:35:54,135: INFO: /common: directory created at artifacts]
+[2024-08-01 17:35:54,136: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 17:35:54,138: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:35:54,138: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 17:35:54,140: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:35:54,141: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:35:54,142: INFO: /common: directory created at artifacts]
+[2024-08-01 17:35:54,143: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 17:35:59,055: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:35:59,056: INFO: /main: *******************]
+[2024-08-01 17:35:59,056: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 17:35:59,058: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:35:59,060: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:35:59,060: INFO: /common: directory created at artifacts]
+[2024-08-01 17:35:59,061: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 17:43:06,669: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 17:43:08,462: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 17:43:08,464: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:43:08,466: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:43:08,467: INFO: /common: directory created at artifacts]
+[2024-08-01 17:43:08,467: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 17:43:08,467: INFO: /data_ingestion: File already exists of size: ~ 7718 KB]
+[2024-08-01 17:43:08,601: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 17:43:08,602: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 17:43:08,604: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:43:08,605: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:43:08,606: INFO: /common: directory created at artifacts]
+[2024-08-01 17:43:08,606: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 17:43:08,608: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:43:08,609: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 17:43:08,611: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:43:08,612: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:43:08,613: INFO: /common: directory created at artifacts]
+[2024-08-01 17:43:08,613: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 17:43:10,384: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 17:43:10,385: INFO: /main: *******************]
+[2024-08-01 17:43:10,385: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 17:43:10,385: INFO: /main: ModelTrainerTrainingPipeline instance created.]
+[2024-08-01 17:43:10,387: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 17:43:10,388: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 17:43:10,389: INFO: /common: directory created at artifacts]
+[2024-08-01 17:43:10,389: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 18:29:12,448: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 18:29:15,229: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 18:29:15,232: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 18:29:15,233: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 18:29:15,234: INFO: /common: directory created at artifacts]
+[2024-08-01 18:29:15,237: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 18:29:32,735: ERROR: /main: <urlopen error [Errno 11001] getaddrinfo failed>]
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1470, in connect
+    super().connect()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1001, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 829, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 964, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\main.py", line 12, in <module>
+    data_ingestion.main()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\pipeline\stage_01_data_ingestion.py", line 13, in main
+    data_ingestion.download_file()
+  File "C:\Users\ASUS\Desktop\ML\Text-Summarizer-NLP-\src\textSummarizer\components\data_ingestion.py", line 17, in download_file
+    filename, headers = request.urlretrieve(
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 240, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+                            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 553, in error
+    result = self._call_chain(*args)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 745, in http_error_302
+    return self.parent.open(new, timeout=req.timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 11001] getaddrinfo failed>
+[2024-08-01 18:30:40,106: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 18:30:41,204: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 18:30:41,206: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 18:30:41,207: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 18:30:41,207: INFO: /common: directory created at artifacts]
+[2024-08-01 18:30:41,208: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 18:31:12,210: INFO: /data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: ED10:29E3AF:4779F6:5A9EC7:66AB5B39
+Accept-Ranges: bytes
+Date: Thu, 01 Aug 2024 13:00:51 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10237-MAA
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1722517251.440755,VS0,VE270
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 097d3a4582c9a5fc3989283163b6662db0b54f9a
+Expires: Thu, 01 Aug 2024 13:05:51 GMT
+Source-Age: 0
+
+]
+[2024-08-01 18:31:12,430: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 18:31:12,431: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 18:31:12,435: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 18:31:12,438: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 18:31:12,439: INFO: /common: directory created at artifacts]
+[2024-08-01 18:31:12,440: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 18:31:12,446: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 18:31:12,447: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 18:31:12,452: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 18:31:12,455: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 18:31:12,456: INFO: /common: directory created at artifacts]
+[2024-08-01 18:31:12,457: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 18:31:23,531: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 18:31:23,532: INFO: /main: *******************]
+[2024-08-01 18:31:23,533: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 18:31:23,534: INFO: /main: ModelTrainerTrainingPipeline instance created.]
+[2024-08-01 18:31:23,537: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 18:31:23,539: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 18:31:23,540: INFO: /common: directory created at artifacts]
+[2024-08-01 18:31:23,541: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 18:46:49,056: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 18:46:52,076: INFO: /main: >>>>> stage Data Ingestion stage started <<<<<]
+[2024-08-01 18:46:52,081: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 18:46:52,085: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 18:46:52,088: INFO: /common: directory created at artifacts]
+[2024-08-01 18:46:52,089: INFO: /common: directory created at artifacts/data_ingestion]
+[2024-08-01 18:46:56,995: INFO: /data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: ED10:29E3AF:4779F6:5A9EC7:66AB5B39
+Accept-Ranges: bytes
+Date: Thu, 01 Aug 2024 13:16:54 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10228-MAA
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1722518214.036784,VS0,VE248
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 76fae16397c49ca969a7af9a9c2a67758f641ac1
+Expires: Thu, 01 Aug 2024 13:21:54 GMT
+Source-Age: 0
+
+]
+[2024-08-01 18:46:57,432: INFO: /main: >>>>> stage Data Ingestion stage completed <<<<<
+
+x================x
+]
+[2024-08-01 18:46:57,436: INFO: /main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-08-01 18:46:57,440: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 18:46:57,443: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 18:46:57,445: INFO: /common: directory created at artifacts]
+[2024-08-01 18:46:57,451: INFO: /common: directory created at artifacts/data_validation]
+[2024-08-01 18:46:57,463: INFO: /main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 18:46:57,464: INFO: /main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-08-01 18:46:57,469: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 18:46:57,473: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 18:46:57,475: INFO: /common: directory created at artifacts]
+[2024-08-01 18:46:57,478: INFO: /common: directory created at artifacts/data_transformation]
+[2024-08-01 18:47:03,647: INFO: /main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-08-01 18:47:03,648: INFO: /main: *******************]
+[2024-08-01 18:47:03,648: INFO: /main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-08-01 18:47:03,649: INFO: /main: ModelTrainerTrainingPipeline instance created.]
+[2024-08-01 18:47:03,650: INFO: /main: Starting the main training process...]
+[2024-08-01 18:47:03,655: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 18:47:03,659: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 18:47:03,661: INFO: /common: directory created at artifacts]
+[2024-08-01 18:47:03,665: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 19:05:36,503: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 19:05:37,418: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 19:05:37,422: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 19:05:37,425: INFO: /common: directory created at artifacts]
+[2024-08-01 19:05:37,428: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 19:10:05,537: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 19:10:05,541: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 19:10:05,543: INFO: /common: directory created at artifacts]
+[2024-08-01 19:10:05,544: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 19:12:03,108: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 19:12:03,114: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 19:12:03,116: INFO: /common: directory created at artifacts]
+[2024-08-01 19:12:03,118: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 19:12:19,564: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 19:12:19,571: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 19:12:19,574: INFO: /common: directory created at artifacts]
+[2024-08-01 19:12:19,576: INFO: /common: directory created at artifacts/model_trainer]
+[2024-08-01 19:13:26,190: INFO: /config: PyTorch version 2.4.0 available.]
+[2024-08-01 19:13:27,179: INFO: /common: yaml file: config\config.yaml loaded successfully]
+[2024-08-01 19:13:27,183: INFO: /common: yaml file: params.yaml loaded successfully]
+[2024-08-01 19:13:27,185: INFO: /common: directory created at artifacts]
+[2024-08-01 19:13:27,187: INFO: /common: directory created at artifacts/model_trainer]
